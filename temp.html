@@ -23,7 +23,7 @@
     <!-- nampilin data covid di Indo -->
     <div class="container">
       <section class="section sec-data">
-        <div class="row" id="data-covid">
+        <div class="row" id="listcovid">
           <!-- <data-view></data-view> -->
         </div>
       </section>
@@ -33,21 +33,21 @@
           <div class="col s12 m4">
             <section>
               <span class="card-title"><i class="large material-icons">masks</i></span>
-              <h4>Selalu Gunakan Masker</h4>
+              <h5><mark>Selalu Gunakan Masker</mark></h5>
             </section>
           </div>
 
           <div class="col s12 m4">
             <section>
               <span class="card-title"> <i class="large material-icons">clean_hands</i></span>
-              <h4>Cuci Tangan Dengan Bersih</h4>
+              <h5><mark>Cuci Tangan Dengan Bersih</mark></h5>
             </section>
           </div>
 
           <div class="col s12 m4">
             <section>
               <span class="card-title"> <i class="large material-icons">connect_without_contact</i></span>
-              <h4>Jaga Jarak</h4>
+              <h5><mark>Jaga Jarak</mark></h5>
             </section>
           </div>
         </div>
@@ -65,14 +65,14 @@
             <section id="hitung" class="section-chart">
               <span class="card-title">Grafik Harian Pesebaran Covid-19 di Seluruh Dunia</span>
               <br>
-              <p><i class="material-icons">location_on</i> Indonesia | Positif </p>
+              <canvas id="myChart" width="600" height="400"></canvas>
               <label></label>
             </section>
           </div>
 
           <div class="col s12 m4">
             <section class="section-chart">
-              <span class="card-title">Jumlah Kasus Positif di Seluruh Dunia</span>
+              <span class="card-title">Perbandingan Kasus Covid-19 di Seluruh Dunia</span>
               <br>
               <p><i class="material-icons">location_on</i> Indonesia | Sembuh</p>
             </section>
