@@ -17,7 +17,7 @@ html {
 header{
     background-image: url('../img/bg.png');
     width:100%; 
-    padding-bottom: 15%;
+    padding-bottom: 8%;
     /* background-size: cover; */
 }
 
@@ -73,10 +73,8 @@ nav {
             rgba(218, 3, 3, 0.6)),
         url('../img/pexels-markus-spiske-3970330.jpg');
     background-size: cover;
-    width: 300px;
+    width: 100%;
     height: 200px;
-    float: center;
-
 }
 
 .sembuh {
@@ -85,10 +83,8 @@ nav {
             rgba(32, 219, 15, 0.6)),
         url('../img/pexels-ketut-subiyanto-4429561.jpg');
     background-size: cover;
-    width: 300px;
+    width: 100%;
     height: 200px;
-    float: center;
-
 }
 
 .meninggal {
@@ -97,10 +93,8 @@ nav {
             rgba(131, 131, 131, 0.6)),
         url('../img/pexels-gratisography-2009 (1).jpg');
     background-size: cover;
-    width: 300px;
+    width: 100%;
     height: 200px;
-    float: center;
-
 }
 
 .kartu span {
@@ -112,6 +106,11 @@ nav {
 .kartu p {
     color: white;
     font-size: 1;
+}
+
+.main-data {
+    margin-top: 0;
+    margin-bottom: 5%;
 }
 
 .section-chart {
@@ -129,18 +128,13 @@ nav {
     font-size: 2em;
 }
 
-.main-prevensi {
-    background-color: red;
-}
-
-.section-prevensi{
+.info{
     width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 3rem;
-    margin: 0 0 3rem 0;
-    float: center;
-    background-color: white;
+    margin: 0 0 3rem 0; */
+    text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
@@ -164,6 +158,12 @@ nav {
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
     }
-    
+}
 
+footer {
+    padding: 20px;
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-weight: bold;
 }
