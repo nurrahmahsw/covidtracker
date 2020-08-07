@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Abel';
 }
 
@@ -14,9 +14,9 @@ html {
     scroll-behavior: smooth;
 }
 
-header{
+header {
     background-image: url('../img/bg.png');
-    width:100%; 
+    width: 100%;
     padding-bottom: 8%;
     /* background-size: cover; */
 }
@@ -122,13 +122,13 @@ nav {
     float: center;
 }
 
-.section-chart span{
+.section-chart span {
     font-weight: bold;
     color: red;
     font-size: 2em;
 }
 
-.info{
+.info {
     width: 100%;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -139,11 +139,11 @@ nav {
 
 @media screen and (max-width: 1000px) {
 
-    header{
-        width:100%; 
+    header {
+        width: 100%;
     }
 
-    .kartu{
+    .kartu {
         float: center;
         width: 100%;
 
