@@ -5,7 +5,6 @@ import "../node_modules/materialize-css/dist/css/materialize.css"
 import "../src/script/component/data-view"
 import main from "./script/main.js"
 import $ from "jquery";
-import Chart from 'chart.js';
 
 // memberi animasi pada bg header
 $('header').mousemove(function (e) {

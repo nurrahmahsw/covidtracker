@@ -1,5 +1,4 @@
 import Chart from 'chart.js';
-import moment from "moment";
 
 function main() {
 
@@ -75,15 +74,17 @@ function main() {
                         a[i] = jsonData[i].totalConfirmed;
                         s[i] = jsonData[i].reportDate;
                     }
-                    
+
                     var adata = a.slice(Math.max(a.length - 7, 1));
                     var sdata = s.slice(Math.max(s.length - 7, 1));
 
-                    const arr = { 'data' : adata, 'date' : sdata };
+                    const arr = {
+                        'data': adata,
+                        'date': sdata
+                    };
 
                     renderLine(arr);
                     // console.log(a.slice(Math.max(a.length - 5, 1)));
-
                 }
             })
             .catch(error => {
@@ -100,39 +101,24 @@ function main() {
                 if (responseJson.error) {
                     showResponseMessage(responseJson.message);
                 } else {
-                    // var jsonData = responseJson;
-                    // var a = [];
-                    // var s = [];
-                    // var d = [];
-                    // for (var i = 0; i < jsonData.length; ++i) {
-                    //     a[i] = jsonData[i].totalConfirmed;
-                    //     s[i] = jsonData[i].reportDate;
-                    // }
-                    
-                    // var adata = a.slice(Math.max(a.length - 7, 1));
-                    // var sdata = s.slice(Math.max(s.length - 7, 1));
 
-                    // const arr = { 'data' : adata, 'date' : sdata };
                     var jsonData = responseJson;
                     var a = jsonData.confirmed.value;
                     var r = jsonData.recovered.value;
                     var d = jsonData.deaths.value;
 
-                    var pr = parseInt((r/a)*100);
-                    var pd = parseInt((d/a)*100);
-                    console.log(pd);
+                    var pr = parseInt((r / a) * 100);
+                    var pd = parseInt((d / a) * 100);
 
-                    // renderLine(arr);
-                    // console.log(a.slice(Math.max(a.length - 5, 1)));
-
+                    var dataPie = [r, d];
+                    // console.log(pd);
+                    renderPie(dataPie);
                 }
             })
             .catch(error => {
                 showResponseMessage(error);
             })
     };
-
-    console.log(getPieData());
 
     const renderConfirmed = (covid) => {
         const listCovidElement = document.querySelector("#listcovid");
@@ -184,8 +170,6 @@ function main() {
     };
 
     const renderLine = (covid) => {
-        const lineElement = document.querySelector("#listcovid");
-
         var lineChartData = {
             labels: covid.date,
             datasets: [{
@@ -193,17 +177,31 @@ function main() {
                 label: 'Positif',
                 id: "y-axis-0",
                 fill: false,
-                borderColor : "rgba(240, 52, 52, 1)",
+                borderColor: "rgba(240, 52, 52, 1)",
                 data: covid.data
             }]
         };
 
         var ctx = document.getElementById("myChart");
-        // allocate and initialize a chart
         var myLineChart = new Chart(ctx, {
             type: 'line',
             data: lineChartData
-            // options: options
+        });
+    };
+
+    const renderPie = (covid) => {
+        var pieChartData = {
+            labels: ["Sembuh", "Meninggal"],
+            datasets: [{
+                backgroundColor: ['rgba(42, 187, 155, 1)', 'rgb(190,190,190)'],
+                data: covid
+            }],
+        };
+
+        var ctx2 = document.getElementById("pieChart");
+        var myPieChart = new Chart(ctx2, {
+            type: 'pie',
+            data: pieChartData
         });
     };
 
@@ -212,6 +210,7 @@ function main() {
         getRecovered();
         getDeaths();
         getLineData();
+        getPieData();
     });
 }
 
