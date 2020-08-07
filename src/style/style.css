@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 
-body {
-    background-image: url('../img/pexels-markus-spiske-3970330.jpg');
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header{
+    background-image: url('../img/bg.png');
+    width:100%; 
+    padding-bottom: 15%;
+    background-size: cover;
 }
 
 nav ul {
@@ -10,7 +21,6 @@ nav ul {
     list-style-type: none;
 }
 
-/*  */
 
 nav a {
     font-size: 18px;
@@ -20,19 +30,17 @@ nav a {
 }
 
 nav i {
-    /* display: block;
-    font-size: 18px;
-    font-weight: 400;
-    text-decoration: none; */
     color: red !important;
 }
 
 nav {
-    background-color: white !important;
-    padding: 5px;
+    background-color: rgb(255, 255, 255, 0) !important;
     position: sticky;
-    text-align: center;
+    /* text-align: center; */
     top: 0;
+    border: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .nav-class {
@@ -40,9 +48,6 @@ nav {
     text-align: center;
 }
 
-.header-intro {
-    margin-top: 0;
-}
 
 .container {
     padding-top: 10%;
@@ -53,6 +58,8 @@ nav {
     border-radius: 5px;
     padding: 3rem;
     margin: 0 0 3rem 0;
+    float: center;
+
 }
 
 .konfirm {
@@ -63,7 +70,7 @@ nav {
     background-size: cover;
     width: 300px;
     height: 200px;
-    float: left;
+    float: center;
 
 }
 
@@ -75,7 +82,7 @@ nav {
     background-size: cover;
     width: 300px;
     height: 200px;
-    float: left;
+    float: center;
 
 }
 
@@ -87,7 +94,7 @@ nav {
     background-size: cover;
     width: 300px;
     height: 200px;
-    float: left;
+    float: center;
 
 }
 
@@ -100,4 +107,33 @@ nav {
 .kartu p {
     color: white;
     font-size: 1;
+}
+
+.section-chart {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 3rem;
+    margin: 0 0 3rem 0;
+    float: center;
+}
+
+.section-chart span{
+    font-weight: bold;
+    color: red;
+    font-size: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+
+    header{
+        width:100%; 
+    }
+
+    .kartu{
+        float: center;
+        width: 100%;
+
+    }
+
 }
