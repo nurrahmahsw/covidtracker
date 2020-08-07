@@ -17,15 +17,15 @@ html {
 header {
     background-image: url('../img/bg.png');
     width: 100%;
-    padding-bottom: 8%;
-    /* background-size: cover; */
+    padding-bottom: 10%;
+    background-size: 105%;
+    background-repeat: no-repeat;
 }
 
 nav ul {
     display: inline-block;
     list-style-type: none;
 }
-
 
 nav a {
     font-size: 18px;
@@ -55,7 +55,7 @@ nav {
 
 
 .container {
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .kartu {
@@ -132,9 +132,12 @@ nav {
     width: 100%;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    padding: 3rem;
-    margin: 0 0 3rem 0; */
+    padding: 3rem; */
     text-align: center;
+}
+
+.info h5 {
+    font-weight: bold;
 }
 
 @media screen and (max-width: 1000px) {
