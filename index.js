@@ -1,8 +1,8 @@
 import "./style/style.css";
-import "./script/component/data-view.js";
-import "../node_modules/materialize-css/dist/js/materialize.js"
-import "../node_modules/materialize-css/dist/css/materialize.css"
-import "../src/script/component/data-view"
+import "./materialize-css/dist/js/materialize.js"
+import "./materialize-css/dist/css/materialize.css"
+import "./script/component/data-covid.js"
+import "./script/component/data-dunia.js"
 import main from "./script/main.js"
 import $ from "jquery";
 
