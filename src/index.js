@@ -7,10 +7,12 @@ import main from "./script/main.js"
 import $ from "jquery";
 
 // memberi animasi pada bg header
-$('header').mousemove(function (e) {
-    var moveX = (e.pageX * -1 / 50);
-    var moveY = (e.pageY * -1 / 50);
-    $(this).css('background-position', moveX + 'px ' + moveY + 'px')
+const header = document.getElementById('header');
+
+header.addEventListener('mousemove', e => {
+    const moveX = (e.pageX * -1 / 50);
+    const moveY = (e.pageY * -1 / 50);
+    $(header).css('background-position', moveX + 'px ' + moveY + 'px')
 })
 
 main();

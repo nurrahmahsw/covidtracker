@@ -21,5 +21,6 @@ module.exports = merge(common, {
                 ]
             }
         ]
-    }
+    },
+    devtool: 'none'
 })
