@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start-dev": "webpack-dev-server --config webpack.dev.js"
+    "start-dev": "webpack-dev-server --config webpack.dev.js",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/nurrahmahsw/covidtracker/issues"
   },
-  "homepage": "https://github.com/nurrahmahsw/covidtracker#readme",
+  "homepage": "https://github.com/nurrahmahsw/covidtracker",
   "dependencies": {
     "chart.js": "^2.9.3",
     "jquery": "^3.5.1",
