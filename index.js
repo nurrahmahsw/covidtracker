@@ -12,7 +12,7 @@ const header = document.getElementById('header');
 header.addEventListener('mousemove', e => {
     const moveX = (e.pageX * -1 / 50);
     const moveY = (e.pageY * -1 / 50);
-    $(header).css('background-position', moveX + 'px ' + moveY + 'px')
+    $(header).css('background-position', ` ${moveX}px  ${moveY}px `)
 })
 
 main();

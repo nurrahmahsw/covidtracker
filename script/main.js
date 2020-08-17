@@ -3,6 +3,12 @@ import Chart from 'chart.js';
 function main() {
 
     const baseUrl = "https://covid19.mathdro.id/api";
+    
+    let ctx; 
+    let data;
+    let chart;
+    let x, y, z;
+    let jsonData;
 
     const getConfirmed = () => {
         fetch(`${baseUrl}/countries/Indonesia`)
@@ -66,17 +72,17 @@ function main() {
                 if (responseJson.error) {
                     showResponseMessage(responseJson.message);
                 } else {
-                    var jsonData = responseJson;
-                    var a = [];
-                    var s = [];
-                    var d = [];
-                    for (var i = 0; i < jsonData.length; ++i) {
-                        a[i] = jsonData[i].totalConfirmed;
-                        s[i] = jsonData[i].reportDate;
+                    jsonData = responseJson;
+                    x = [];
+                    y = [];
+                    
+                    for (let i = 0; i < jsonData.length; ++i) {
+                        x[i] = jsonData[i].totalConfirmed;
+                        y[i] = jsonData[i].reportDate;
                     }
 
-                    var adata = a.slice(Math.max(a.length - 7, 1));
-                    var sdata = s.slice(Math.max(s.length - 7, 1));
+                    let adata = x.slice(Math.max(x.length - 7, 1));
+                    let sdata = y.slice(Math.max(y.length - 7, 1));
 
                     const arr = {
                         'data': adata,
@@ -102,15 +108,15 @@ function main() {
                     showResponseMessage(responseJson.message);
                 } else {
 
-                    var jsonData = responseJson;
-                    var a = jsonData.confirmed.value;
-                    var r = jsonData.recovered.value;
-                    var d = jsonData.deaths.value;
+                    jsonData = responseJson;
+                    x = jsonData.confirmed.value;
+                    y = jsonData.recovered.value;
+                    z = jsonData.deaths.value;
 
-                    var pr = parseInt((r / a) * 100);
-                    var pd = parseInt((d / a) * 100);
+                    let pr = parseInt((y / x) * 100);
+                    let pd = parseInt((z / x) * 100);
 
-                    var dataPie = [r, d];
+                    let dataPie = [y, z];
                     // console.log(pd);
                     renderPie(dataPie);
                 }
@@ -170,7 +176,7 @@ function main() {
     };
 
     const renderLine = (covid) => {
-        var lineChartData = {
+        data = {
             labels: covid.date,
             datasets: [{
                 type: 'line',
@@ -182,15 +188,15 @@ function main() {
             }]
         };
 
-        var ctx = document.getElementById("myChart");
-        var myLineChart = new Chart(ctx, {
+        ctx = document.getElementById("myChart");
+        chart = new Chart(ctx, {
             type: 'line',
-            data: lineChartData
+            data: data
         });
     };
 
     const renderPie = (covid) => {
-        var pieChartData = {
+        data = {
             labels: ["Sembuh", "Meninggal"],
             datasets: [{
                 backgroundColor: ['rgba(42, 187, 155, 1)', 'rgb(190,190,190)'],
@@ -198,10 +204,10 @@ function main() {
             }],
         };
 
-        var ctx2 = document.getElementById("pieChart");
-        var myPieChart = new Chart(ctx2, {
+        ctx = document.getElementById("pieChart");
+        chart = new Chart(ctx, {
             type: 'pie',
-            data: pieChartData
+            data: data
         });
     };
 
