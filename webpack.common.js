@@ -5,7 +5,7 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
-        publicPath: '/src/temp.html',
+        // publicPath: '/src/temp.html',
         filename: "bundle.js"
     },
     module: {
@@ -39,5 +39,10 @@ module.exports = {
             filename: "index.html"
         })
     ],
-    devtool: 'eval-source-map'
+    devtool: 'eval-source-map',
+    devServer: {
+        host: '0.0.0.0',//your ip address
+        port: 8080,
+        disableHostCheck: true
+    }
 }
